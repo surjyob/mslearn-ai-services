@@ -30,7 +30,7 @@ namespace keyvault_client
                 var keyVaultUri = new Uri($"https://{keyVaultName}.vault.azure.net/");
                 ClientSecretCredential credential = new ClientSecretCredential(appTenant, appId, appPassword);
                 var keyVaultClient = new SecretClient(keyVaultUri, credential);
-                KeyVaultSecret secretKey = keyVaultClient.GetSecret("AI-Services-Key");
+                KeyVaultSecret secretKey = keyVaultClient.GetSecret("az-ai-svc-secret");
                 aiSvcKey = secretKey.Value;
 
                 // Get user input (until they enter "quit")
